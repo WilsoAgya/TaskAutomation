@@ -88,11 +88,11 @@ def check_name():
 
     for filename in os.listdir(directory_path):
         src_file = os.path.join(directory_path,filename)
-        new_filename = filename.replace(" ","_")
+        new_filename = filename.replace(" ", "_")
 
         for extension, prefix in prefixes.items():
             if new_filename.endswith('.' + extension):
-                new_filename = prefix + filename
+                new_filename = prefix + new_filename
                 break
 
         copy_and_rename(src_file,newFoldername,new_filename)
